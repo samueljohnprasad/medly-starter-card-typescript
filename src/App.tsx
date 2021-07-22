@@ -6,7 +6,8 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Card from './components/layout/Card/Card';
-
+import createGlobalStyle from './components/layout/Card/globalStyles';
+import { theme } from 'components/layout/Card/theme';
 const App: React.FC = () => (
     <ThemeProvider theme={defaultTheme}>
         <>
@@ -15,7 +16,10 @@ const App: React.FC = () => (
                     <PageLayout>
                         <ToastContainer position="top-end" />
                         <SideNav />
-                        <Card />
+                        <ThemeProvider theme={theme}>
+                            <Card />
+                        </ThemeProvider>
+
                         <Routes />
                     </PageLayout>
                 </ErrorBoundary>

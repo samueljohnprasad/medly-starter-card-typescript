@@ -73,6 +73,9 @@ const Style = styled.button`
     cursor: pointer;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12), 0 20px 20px -10px rgba(0, 0, 0, 0.125);
     transition: ${transition};
+    padding: 0;
+    border: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     &:hover {
         transform: scale(1.04);
         ${Title},

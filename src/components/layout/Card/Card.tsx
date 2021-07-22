@@ -10,14 +10,14 @@ const Page = styled.div`
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    overflow-x: auto;
+    overflow-y: auto;
     scroll-behavior: smooth;
 `;
 
 const Grid = styled.div`
     display: flex;
-    flex-wrap: nowrap;
-    padding-left: calc(50vw - 160px);
+    flex-wrap: wrap;
+    padding-left: 20px;
     &::after {
         content: '';
         position: relative;
@@ -28,6 +28,7 @@ const Grid = styled.div`
     }
     > button {
         margin-right: 40px;
+        margin-bottom: 40px;
     }
 
     > button:not(:first-child) {
