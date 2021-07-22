@@ -1,7 +1,6 @@
 import React from 'react';
 import { WithStyle } from '@medly-components/utils';
 import styled from 'styled-components';
-import websites from './utils.json';
 import CardStyle from './Card.styled';
 const Page = styled.div`
     display: flex;
@@ -17,7 +16,7 @@ const Page = styled.div`
 const Grid = styled.div`
     display: flex;
     flex-wrap: wrap;
-    padding-left: 20px;
+    padding-left: 60px;
     &::after {
         content: '';
         position: relative;
@@ -35,16 +34,24 @@ const Grid = styled.div`
         visibility: visible; /* switch to 'visible' */
     }
 `;
-type styler = {
-    title?: string;
-    description?: string;
-    image?: string;
+type obj = {
+    id: number;
+    category: string;
+    description: string;
+    image: string;
+    price: number;
+    title: string;
+    amount: number;
 };
-const Card: React.FC & WithStyle = React.memo(() => {
+
+interface styler {
+    sam: obj[];
+}
+const Card: React.FC<styler> = React.memo(({ sam }) => {
     return (
         <Page>
             <Grid>
-                {websites.map((website: styler, index: number) => (
+                {sam.map((website: obj, index: number) => (
                     <CardStyle key={index} {...website} />
                 ))}
             </Grid>

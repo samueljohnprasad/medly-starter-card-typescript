@@ -8,6 +8,8 @@ import { ThemeProvider } from 'styled-components';
 import Card from './components/layout/Card/Card';
 import createGlobalStyle from './components/layout/Card/globalStyles';
 import { theme } from 'components/layout/Card/theme';
+import websites from './components/layout/Card/utils.json';
+import Carty from './pages/CartPage/App';
 const App: React.FC = () => (
     <ThemeProvider theme={defaultTheme}>
         <>
@@ -16,10 +18,7 @@ const App: React.FC = () => (
                     <PageLayout>
                         <ToastContainer position="top-end" />
                         <SideNav />
-                        <ThemeProvider theme={theme}>
-                            <Card />
-                        </ThemeProvider>
-
+                        <Carty />
                         <Routes />
                     </PageLayout>
                 </ErrorBoundary>

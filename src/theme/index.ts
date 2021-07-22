@@ -3,8 +3,7 @@ import { coreDefaultTheme } from './core';
 import { theme } from '../components/layout/Card/theme';
 export const defaultTheme = {
     ...medlyDefaultTheme,
-    ...coreDefaultTheme,
-    ...theme
+    ...coreDefaultTheme
 };
 
 export type Theme = MedlyTheme;

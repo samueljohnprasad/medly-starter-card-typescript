@@ -18,6 +18,7 @@ const Screenshot = styled.figure<{ image: string }>`
     overflow: hidden;
     backface-visibility: hidden;
     transition: ${transition};
+    object-fit: contain;
     &::before {
         content: '';
         position: absolute;
@@ -47,7 +48,7 @@ const Title = styled.span`
 const Description = styled.span`
     display: block;
     font-size: 0.875em;
-    color: #969494;
+    color: #999;
     transition: ${transition};
     transition-delay: 0.04s;
 `;
@@ -64,11 +65,14 @@ const BottomBar = styled.span<{ background: string }>`
 `;
 
 const Style = styled.button`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     flex-shrink: 0;
     width: ${cardWidth}px;
     text-align: left;
-    background: #cecbcb;
+    background: #fff;
     border-radius: ${borderRadius}px;
     cursor: pointer;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12), 0 20px 20px -10px rgba(0, 0, 0, 0.125);
@@ -90,6 +94,9 @@ const Style = styled.button`
             transform: translateY(-12px);
         }
         ${BottomBar} {
+            margin-left: 135px;
+            width: 50px;
+            height: 30px;
             border-radius: ${borderRadius - 2}px;
             transform: translateY(-14px) scale(0.9);
         }
@@ -114,8 +121,8 @@ const CardStyles = ({ image, title, description }: styler) => (
         <Screenshot image={image} />
         <Content>
             <Title>{title}</Title>
-            <Description>{description}</Description>
-            <BottomBar background={'red'} />
+            <Description>{description.slice(0, 100)}</Description>
+            <BottomBar background={'green'}></BottomBar>
         </Content>
     </Style>
 );
