@@ -1,4 +1,4 @@
-import { CartItemType } from '@components/layout/Products.tsx/type';
+import { CartItemType } from '@components/layout/Products/type';
 
 export enum Actions {
     UPDATE_QUANTITY,

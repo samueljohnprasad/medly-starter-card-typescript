@@ -1,4 +1,4 @@
-import { CartItemType } from '@components/layout/Products.tsx/type';
+import { CartItemType } from '@components/layout/Products/type';
 import { Actions, CartActionTypes } from '../actions/type';
 import { InitialType } from '../type';
 const initialState: InitialType = {

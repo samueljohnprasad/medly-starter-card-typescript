@@ -1,7 +1,7 @@
 import { Button, Text } from '@medly-components/core';
 import React from 'react';
 import { CartItemType } from './type';
-import { productEventHandler } from '../Product/type';
+import { productEventHandler } from '../../common/Product/type';
 
 export const buttonHOC = (CartItem: CartItemType, productEventHandler: productEventHandler, key: number) => {
     return (

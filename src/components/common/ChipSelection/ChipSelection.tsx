@@ -17,10 +17,7 @@ export const ChipSelection: React.FC = () => {
         } else {
             selectedCheckboxes.add(label);
         }
-        console.log('selectedCheckboxes', Array.from(selectedCheckboxes));
-        const arr: string[] = Array.from(selectedCheckboxes) as string[];
-        console.log(Array.isArray(arr));
-        dispatch(chipFilterProducts(arr));
+        dispatch(chipFilterProducts(Array.from(selectedCheckboxes) as string[]));
     };
     return (
         <>

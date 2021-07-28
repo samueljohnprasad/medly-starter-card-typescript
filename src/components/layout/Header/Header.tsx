@@ -2,8 +2,8 @@ import { Avatar, Text, SearchBox } from '@medly-components/core';
 import { WithStyle } from '@medly-components/utils';
 import { useProducts } from 'contexts/productsContext/productsContext';
 import React from 'react';
-import Cart from '../Cart';
-import ChipSelection from '../ChipSelection';
+import Cart from '../../common/Cart';
+import ChipSelection from '../../common/ChipSelection';
 import * as Styled from './Header.styled';
 
 export const Header: React.FC & WithStyle = () => {

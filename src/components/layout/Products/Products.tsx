@@ -1,30 +1,24 @@
-import React, { useState } from 'react';
-import Product from '../Product';
+import React from 'react';
+import Product from '../../common/Product';
 import { WithStyle } from '@medly-components/utils';
 import { useProducts } from '../../../contexts/productsContext/productsContext';
 import { CartItemType } from './type';
-import Selections from '@components/layout/OptionSelection';
+import Selections from '@components/common/OptionSelection';
 import { useCart } from 'contexts/cartContext/CartContext';
 import { buttonHOC } from './ButtonHOC';
 
 export const Products: React.FC & WithStyle = () => {
     const { dispatch, updateQuantity } = useCart();
-    //const { state, setState } = useState();
     const store = useProducts();
     const {
         products: { products, chipCategories }
     } = store;
-    console.log('storeeee in Products', chipCategories);
     const searchedKeyword = store.products.searchedKeyword;
-    // const chips = products.products.filter((item) =>{
-    //     return arr.inclues(item.category) || !arr[0];
-    // })
     const filteredProducts = products
         .filter(product => {
             return chipCategories.includes(product.category) || !chipCategories[0];
         })
         .filter(item => item.name.toLowerCase().includes(searchedKeyword.toLowerCase()) || !searchedKeyword);
-    console.log('Products');
     const AddToCartHandler = (obj: any) => {
         dispatch(updateQuantity(obj));
     };

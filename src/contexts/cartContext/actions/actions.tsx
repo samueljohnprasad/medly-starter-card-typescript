@@ -1,5 +1,5 @@
 import { Actions, ClearProductsAction, InitialProductsAction, RemoveProductsAction, UpdateQuantityAction } from './type';
-import { CartItemType } from '@components/layout/Products.tsx/type';
+import { CartItemType } from '@components/layout/Products/type';
 export const loadBasket = (): InitialProductsAction => ({
     type: Actions.INITIAL_PRODUCTS
 });

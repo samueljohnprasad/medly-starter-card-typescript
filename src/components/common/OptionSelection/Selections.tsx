@@ -6,7 +6,6 @@ import { useState } from 'react';
 export const Selections: React.FC = () => {
     const { dispatch, selectionProducts } = useProducts();
     const [value, setValue] = useState<number | React.Dispatch<number>>(1);
-    console.log('optionSelections');
     return (
         <SingleSelect
             errorText=""

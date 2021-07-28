@@ -1,6 +1,6 @@
 import { Actions, CartActionTypes } from './actions/type';
 import React from 'react';
-import { CartItemType } from '@components/layout/Products.tsx/type';
+import { CartItemType } from '@components/layout/Products/type';
 
 export interface InitialType {
     cartItems: CartItemType[];

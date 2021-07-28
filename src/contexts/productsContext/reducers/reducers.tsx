@@ -1,4 +1,4 @@
-import { CartItemType } from '@components/layout/Products.tsx/type';
+import { CartItemType } from '@components/layout/Products/type';
 import { InitialType } from '@utils/type';
 import { Actions, ProductsActionTypes } from '../actions/type';
 export const reducers = (state: InitialType, action: ProductsActionTypes) => {

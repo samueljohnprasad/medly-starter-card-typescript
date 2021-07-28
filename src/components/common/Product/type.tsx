@@ -1,4 +1,4 @@
-import { CartItemType } from '../Products.tsx/type';
+import { CartItemType } from '../../layout/Products/type';
 
 export type productEventHandler = {
     eventHandler: (CartItem: CartItemType) => any;
