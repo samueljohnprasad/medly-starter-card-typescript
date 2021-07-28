@@ -1,4 +1,3 @@
-import Product from '@components/layout/Product';
 import { CartItemType } from '@components/layout/Products.tsx/type';
 import { InitialType } from '@utils/type';
 import { Actions, ProductsActionTypes } from '../actions/type';
@@ -10,7 +9,6 @@ export const reducers = (state: InitialType, action: ProductsActionTypes) => {
                 ...state
             };
         case Actions.SEARCH_PRODUCT:
-            console.log('reducer state', state);
             return {
                 ...state,
                 searchedKeyword: action.name
@@ -29,7 +27,6 @@ export const reducers = (state: InitialType, action: ProductsActionTypes) => {
             filteredProducts = state.products.filter(product => {
                 return product.category === action.name;
             });
-            console.log('filteredProducts', filteredProducts);
             return {
                 ...state,
                 products: filteredProducts

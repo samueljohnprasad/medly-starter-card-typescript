@@ -18,7 +18,7 @@ export type CartContextType = {
     dispatch: (action: CartActionTypes) => void;
     cartItems: InitialType;
     loadBasket: () => void;
-    clearProducts: () => void;
+    clearProducts: () => any;
     updateQuantity: (cartItem: CartItemType) => update;
     removeProduct: (id: number) => any;
 };

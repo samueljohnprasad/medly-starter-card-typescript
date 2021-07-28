@@ -32,6 +32,12 @@ export const reducers = (state: InitialType = initialState, action: CartActionTy
                 cartItems: [...newState]
             };
 
+        case Actions.CLEAR_PRODUCTS:
+            console.log('clear product');
+            return {
+                cartItems: []
+            };
+
         default:
             return state;
     }

@@ -8,7 +8,7 @@ import { CartItemType } from '../Products.tsx/type';
 
 export const Cart: React.FC = () => {
     const [drawerState, setDrawerState] = useState(false);
-    const { cartItems, removeProduct, dispatch } = useCart();
+    const { cartItems, removeProduct, dispatch, clearProducts } = useCart();
     console.log('Cart');
     const handler = () => {
         setDrawerState(!drawerState);
@@ -48,7 +48,7 @@ export const Cart: React.FC = () => {
                     ))}
                 </Drawer.Content>
                 <Drawer.Footer>
-                    <Button variant="flat" onClick={() => 's'}>
+                    <Button variant="flat" onClick={() => dispatch(clearProducts())}>
                         Clear All
                     </Button>
                 </Drawer.Footer>
