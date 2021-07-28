@@ -22,4 +22,5 @@ export type ProductContextType = {
     loadBasket: () => void;
     searchProduct: (name: string) => search;
     selectionProducts: (name: string) => search;
+    chipFilterProducts: (name: string) => any;
 };

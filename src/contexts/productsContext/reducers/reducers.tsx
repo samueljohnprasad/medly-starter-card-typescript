@@ -1,6 +1,9 @@
+import Product from '@components/layout/Product';
+import { CartItemType } from '@components/layout/Products.tsx/type';
 import { InitialType } from '@utils/type';
 import { Actions, ProductsActionTypes } from '../actions/type';
 export const reducers = (state: InitialType, action: ProductsActionTypes) => {
+    let filteredProducts: CartItemType[] = [];
     switch (action.type) {
         case Actions.INITIAL_PRODUCTS:
             return {
@@ -21,6 +24,15 @@ export const reducers = (state: InitialType, action: ProductsActionTypes) => {
 
             return {
                 ...state
+            };
+        case Actions.CHIP_FILTER:
+            filteredProducts = state.products.filter(product => {
+                return product.category === action.name;
+            });
+            console.log('filteredProducts', filteredProducts);
+            return {
+                ...state,
+                products: filteredProducts
             };
 
         default:

@@ -18,11 +18,11 @@ export const Products: React.FC & WithStyle = () => {
     const filteredProducts = products.products.filter(item => item.name.toLowerCase().includes(searchedKeyword.toLowerCase()));
     console.log('Products');
     const AddToCartHandler = (obj: any) => {
-        console.log('heheehe');
+        console.log('AddToCartHandler');
         dispatch(updateQuantity(obj));
     };
     const removeToCartHandler = (obj: any) => {
-        console.log('heheehe');
+        console.log('removeToCartHandler');
         dispatch(updateQuantity(obj));
     };
     return (

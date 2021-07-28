@@ -1,7 +1,8 @@
 export enum Actions {
     INITIAL_PRODUCTS,
     SEARCH_PRODUCT,
-    SELECTION_PRODUCTS
+    SELECTION_PRODUCTS,
+    CHIP_FILTER
 }
 
 export interface LoadBasketAction {
@@ -16,4 +17,8 @@ export interface SelectionProducts {
     type: Actions.SELECTION_PRODUCTS;
     name: string;
 }
-export type ProductsActionTypes = LoadBasketAction | SearchProduct | SelectionProducts;
+export interface ChipFilterProducts {
+    type: Actions.CHIP_FILTER;
+    name: string;
+}
+export type ProductsActionTypes = LoadBasketAction | SearchProduct | SelectionProducts | ChipFilterProducts;

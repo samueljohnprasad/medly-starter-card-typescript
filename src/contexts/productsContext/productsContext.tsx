@@ -1,6 +1,6 @@
 import { InitialState } from '@utils/products';
 import React, { createContext, useContext, useReducer } from 'react';
-import { loadBasket, searchProduct, selectionProducts } from './actions/actions';
+import { loadBasket, searchProduct, selectionProducts, chipFilterProducts } from './actions/actions';
 import { reducers } from './reducers/reducers';
 import { ProductContextType, Theme, Props } from './type';
 
@@ -18,6 +18,7 @@ export const ProductsProvider = ({ children }: Props) => {
                 loadBasket,
                 searchProduct,
                 selectionProducts,
+                chipFilterProducts,
                 searchedKeyword: ''
             }}
         >
