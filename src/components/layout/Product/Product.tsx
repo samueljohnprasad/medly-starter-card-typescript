@@ -51,8 +51,8 @@ export const Product: React.FC<ProductProps> = ({ CartItem, buttonHOC, productEv
                 <Text fullWidth={false} lineThrough={false} textAlign="initial" textColor="inherit" textVariant="h3" uppercase={false}>
                     ${price}
                 </Text>
-                <Text fullWidth={false} lineThrough={false} textAlign="initial" textColor="inherit" textVariant="h3" uppercase={false}>
-                    {amount}
+                <Text fullWidth={false} lineThrough={false} textAlign="initial" textColor="inherit" textVariant="h5" uppercase={false}>
+                    Quantity {amount}
                 </Text>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                     {productEventHandlerArray.map(eventObject => buttonHOC(CartItem, eventObject, eventObject.id))}

@@ -33,7 +33,7 @@ export const Cart: React.FC = () => {
                 <AddShoppingCartIcon size="S" />
             </Button>
             <Drawer open={drawerState} onClose={handler}>
-                <Drawer.Header>Cart Total Price {cartTotalPrice()} </Drawer.Header>
+                <Drawer.Header> {`total $${cartTotalPrice()}`} </Drawer.Header>
                 <Drawer.Content>
                     {cartItems?.cartItems?.map(item => (
                         <Product
