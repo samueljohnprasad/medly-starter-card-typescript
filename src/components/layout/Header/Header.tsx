@@ -16,7 +16,13 @@ export const Header: React.FC & WithStyle = () => {
                 </Text>
             </Styled.LeftSide>
             <Styled.RightSide>
-                <SearchBox options={[]} placeholder="Search" size="M" onInputChange={(e: string) => dispatch(searchProduct(e))} />
+                <SearchBox
+                    options={[]}
+                    placeholder="Search"
+                    size="M"
+                    onInputChange={(e: string) => dispatch(searchProduct(e))}
+                    onClear={() => dispatch(searchProduct(''))}
+                />
                 <ChipSelection />
                 <Cart />
             </Styled.RightSide>
