@@ -35,7 +35,7 @@ export const Products: React.FC & WithStyle = () => {
                         CartItem={product}
                         buttonHOC={buttonHOC}
                         buttonName={'ADD TO CART'}
-                        productEventHandlerArray={[{ eventHandler: AddToCartHandler, buttonName: 'ADD TO CARTT' }]}
+                        productEventHandlerArray={[{ eventHandler: AddToCartHandler, buttonName: 'ADD TO CARTT', id: 0 }]}
                     />
                 ))}
             </header>

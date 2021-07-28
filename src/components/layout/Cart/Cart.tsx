@@ -34,8 +34,8 @@ export const Cart: React.FC = () => {
                             buttonHOC={buttonHOC}
                             buttonName={'+'}
                             productEventHandlerArray={[
-                                { eventHandler: cart1, buttonName: '+' },
-                                { eventHandler: cart2, buttonName: '-' }
+                                { eventHandler: cart1, buttonName: '+', id: 0 },
+                                { eventHandler: cart2, buttonName: '-', id: 1 }
                             ]}
                         />
                     ))}

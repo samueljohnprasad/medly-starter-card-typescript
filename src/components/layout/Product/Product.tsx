@@ -53,7 +53,7 @@ export const Product: React.FC<ProductProps> = ({ CartItem, buttonHOC, buttonNam
                     ${price}
                 </Text>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
-                    {productEventHandlerArray.map((event, index) => buttonHOC(buttonName, CartItem, event, index))}
+                    {productEventHandlerArray.map((eventObject, index) => buttonHOC(buttonName, CartItem, eventObject, eventObject.id))}
                 </div>
             </Card>
         </Card>

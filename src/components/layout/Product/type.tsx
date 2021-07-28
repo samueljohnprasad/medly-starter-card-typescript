@@ -4,6 +4,7 @@ import React from 'react';
 export type productEventHandler = {
     eventHandler: (CartItem: CartItemType) => any;
     buttonName: string;
+    id: number;
 };
 
 export interface ProductProps {
