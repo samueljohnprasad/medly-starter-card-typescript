@@ -2,8 +2,6 @@ import React, { createContext, useContext, useReducer } from 'react';
 import { clearProducts, loadBasket, removeProduct, updateQuantity } from './actions/actions';
 import { reducers } from './reducers/reducers';
 import { CartContextType, InitialType, Props } from './type';
-import { CartItemType } from '@components/layout/Products.tsx/type';
-import { CartActionTypes } from './actions/type';
 
 export const CartContext = createContext<CartContextType>({} as CartContextType);
 

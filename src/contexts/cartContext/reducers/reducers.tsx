@@ -13,7 +13,6 @@ export const reducers = (state: InitialType = initialState, action: CartActionTy
 
                 if (isItemInCart) {
                     newState = state.cartItems.map(item => (item.id === action.cartItem.id ? { ...item } : item));
-                    console.log('newState', newState);
                 } else {
                     newState = [...state.cartItems, action.cartItem];
                 }
@@ -33,7 +32,6 @@ export const reducers = (state: InitialType = initialState, action: CartActionTy
             };
 
         case Actions.CLEAR_PRODUCTS:
-            console.log('clear product');
             return {
                 cartItems: []
             };

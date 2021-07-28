@@ -18,10 +18,6 @@ export const Products: React.FC & WithStyle = () => {
         console.log('AddToCartHandler');
         dispatch(updateQuantity(obj));
     };
-    const removeToCartHandler = (obj: any) => {
-        console.log('removeToCartHandler');
-        dispatch(updateQuantity(obj));
-    };
     return (
         <div>
             <Selections></Selections>
@@ -31,7 +27,6 @@ export const Products: React.FC & WithStyle = () => {
                         key={product.id}
                         CartItem={product}
                         buttonHOC={buttonHOC}
-                        buttonName={'ADD TO CART'}
                         productEventHandlerArray={[{ eventHandler: AddToCartHandler, buttonName: 'ADD TO CART', id: 0 }]}
                     />
                 ))}

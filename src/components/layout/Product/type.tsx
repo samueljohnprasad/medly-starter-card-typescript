@@ -1,5 +1,4 @@
 import { CartItemType } from '../Products.tsx/type';
-import React from 'react';
 
 export type productEventHandler = {
     eventHandler: (CartItem: CartItemType) => any;
@@ -9,7 +8,6 @@ export type productEventHandler = {
 
 export interface ProductProps {
     CartItem: CartItemType;
-    buttonHOC: (buttonName: string, CartItem: CartItemType, productEventHandler: productEventHandler, key: number) => any;
-    buttonName: string;
+    buttonHOC: (CartItem: CartItemType, productEventHandler: productEventHandler, key: number) => any;
     productEventHandlerArray: productEventHandler[];
 }

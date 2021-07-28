@@ -1,9 +1,8 @@
 import React from 'react';
-import { Button, Card } from '@medly-components/core';
+import { Card } from '@medly-components/core';
 import { Text } from '@medly-components/core';
 import { ProductProps } from './type';
-import { useCart } from 'contexts/cartContext/CartContext';
-export const Product: React.FC<ProductProps> = ({ CartItem, buttonHOC, buttonName, productEventHandlerArray }: ProductProps) => {
+export const Product: React.FC<ProductProps> = ({ CartItem, buttonHOC, productEventHandlerArray }: ProductProps) => {
     const { name, id, image, price, category } = CartItem;
     console.log('Product ');
     return (
@@ -53,7 +52,7 @@ export const Product: React.FC<ProductProps> = ({ CartItem, buttonHOC, buttonNam
                     ${price}
                 </Text>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
-                    {productEventHandlerArray.map(eventObject => buttonHOC(buttonName, CartItem, eventObject, eventObject.id))}
+                    {productEventHandlerArray.map(eventObject => buttonHOC(CartItem, eventObject, eventObject.id))}
                 </div>
             </Card>
         </Card>
