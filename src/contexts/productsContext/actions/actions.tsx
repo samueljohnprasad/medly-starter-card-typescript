@@ -14,7 +14,7 @@ export const selectionProducts = (name: string): SelectionProducts => ({
     name
 });
 
-export const chipFilterProducts = (name: string): ChipFilterProducts => ({
+export const chipFilterProducts = (name: string[]): ChipFilterProducts => ({
     type: Actions.CHIP_FILTER,
     name
 });

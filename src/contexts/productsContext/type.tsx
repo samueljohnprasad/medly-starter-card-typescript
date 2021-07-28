@@ -16,11 +16,10 @@ interface search {
 
 export type ProductContextType = {
     theme: Theme;
-    searchedKeyword: string;
     dispatch: (action: ProductsActionTypes) => void;
     products: InitialType;
     loadBasket: () => void;
     searchProduct: (name: string) => search;
     selectionProducts: (name: string) => search;
-    chipFilterProducts: (name: string) => any;
+    chipFilterProducts: (name: string[]) => any;
 };

@@ -1,6 +1,7 @@
 import { InitialType } from './type';
 export const InitialState: InitialType = {
     searchedKeyword: '',
+    chipCategories: [],
     products: [
         {
             id: 1,

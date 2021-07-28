@@ -19,6 +19,6 @@ export interface SelectionProducts {
 }
 export interface ChipFilterProducts {
     type: Actions.CHIP_FILTER;
-    name: string;
+    name: string[];
 }
 export type ProductsActionTypes = LoadBasketAction | SearchProduct | SelectionProducts | ChipFilterProducts;

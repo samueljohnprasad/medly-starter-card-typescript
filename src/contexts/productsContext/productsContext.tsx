@@ -8,7 +8,7 @@ export const ProductContext = createContext<ProductContextType>({} as ProductCon
 
 export const ProductsProvider = ({ children }: Props) => {
     const [products, dispatch] = useReducer(reducers, InitialState);
-    console.log('state', products);
+    console.log('productssContext products', products);
     return (
         <ProductContext.Provider
             value={{
@@ -18,8 +18,7 @@ export const ProductsProvider = ({ children }: Props) => {
                 loadBasket,
                 searchProduct,
                 selectionProducts,
-                chipFilterProducts,
-                searchedKeyword: ''
+                chipFilterProducts
             }}
         >
             {children}
