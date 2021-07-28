@@ -25,7 +25,7 @@ export const Cart: React.FC = () => {
     const cartTotalPrice = () => {
         console.log('cartTotalPrice');
 
-        return cartItems?.cartItems?.reduce((acc, curr) => acc + curr.price, 0);
+        return cartItems?.cartItems?.reduce((acc, curr) => acc + curr.amount * curr.price, 0);
     };
     return (
         <>
