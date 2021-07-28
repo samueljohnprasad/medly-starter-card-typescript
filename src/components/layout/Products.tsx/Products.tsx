@@ -4,10 +4,7 @@ import { WithStyle } from '@medly-components/utils';
 import { useProducts } from '../../../contexts/productsContext/productsContext';
 import { CartItemType } from './type';
 import Selections from '@components/layout/OptionSelection';
-import Cart from '../Cart';
-import { Button, Chip } from '@medly-components/core';
-import { CartProvider, useCart } from 'contexts/cartContext/CartContext';
-import { useState } from 'react';
+import { useCart } from 'contexts/cartContext/CartContext';
 import { buttonHOC } from './ButtonHOC';
 
 export const Products: React.FC & WithStyle = () => {
@@ -35,7 +32,7 @@ export const Products: React.FC & WithStyle = () => {
                         CartItem={product}
                         buttonHOC={buttonHOC}
                         buttonName={'ADD TO CART'}
-                        productEventHandlerArray={[{ eventHandler: AddToCartHandler, buttonName: 'ADD TO CARTT', id: 0 }]}
+                        productEventHandlerArray={[{ eventHandler: AddToCartHandler, buttonName: 'ADD TO CART', id: 0 }]}
                     />
                 ))}
             </header>

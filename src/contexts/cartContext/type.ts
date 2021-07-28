@@ -20,5 +20,5 @@ export type CartContextType = {
     loadBasket: () => void;
     clearProducts: () => void;
     updateQuantity: (cartItem: CartItemType) => update;
-    removeProduct: (id: number) => void;
+    removeProduct: (id: number) => any;
 };

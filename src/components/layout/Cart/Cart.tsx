@@ -4,19 +4,21 @@ import React, { useState } from 'react';
 import Product from '../Product';
 import { buttonHOC } from '../Products.tsx/ButtonHOC';
 import { AddShoppingCartIcon } from '@medly-components/icons';
+import { CartItemType } from '../Products.tsx/type';
 
 export const Cart: React.FC = () => {
     const [drawerState, setDrawerState] = useState(false);
-    const { cartItems } = useCart();
+    const { cartItems, removeProduct, dispatch } = useCart();
     console.log('Cart');
     const handler = () => {
         setDrawerState(!drawerState);
     };
 
-    const cart1 = () => {
+    const addHandler = () => {
         console.log('im in cart1');
     };
-    const cart2 = () => {
+    const removeHandler = (cartItem: CartItemType) => {
+        dispatch(removeProduct(cartItem.id));
         console.log('im in cart2');
     };
     return (
@@ -25,7 +27,7 @@ export const Cart: React.FC = () => {
                 <AddShoppingCartIcon size="S" />
             </Button>
             <Drawer open={drawerState} onClose={handler}>
-                <Drawer.Header>Add Filters</Drawer.Header>
+                <Drawer.Header>Cart</Drawer.Header>
                 <Drawer.Content>
                     {cartItems?.cartItems?.map(item => (
                         <Product
@@ -34,8 +36,8 @@ export const Cart: React.FC = () => {
                             buttonHOC={buttonHOC}
                             buttonName={'+'}
                             productEventHandlerArray={[
-                                { eventHandler: cart1, buttonName: '+', id: 0 },
-                                { eventHandler: cart2, buttonName: '-', id: 1 }
+                                { eventHandler: addHandler, buttonName: '+', id: 0 },
+                                { eventHandler: removeHandler, buttonName: '-', id: 1 }
                             ]}
                         />
                     ))}

@@ -26,6 +26,12 @@ export const reducers = (state: InitialType = initialState, action: CartActionTy
                 cartItems: [...newState]
             };
 
+        case Actions.REMOVE_PRODUCT:
+            newState = state.cartItems.filter(cartIem => cartIem.id !== action.id);
+            return {
+                cartItems: [...newState]
+            };
+
         default:
             return state;
     }
