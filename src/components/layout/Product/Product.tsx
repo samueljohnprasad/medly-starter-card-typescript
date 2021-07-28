@@ -3,7 +3,7 @@ import { Card } from '@medly-components/core';
 import { Text } from '@medly-components/core';
 import { ProductProps } from './type';
 export const Product: React.FC<ProductProps> = ({ CartItem, buttonHOC, productEventHandlerArray }: ProductProps) => {
-    const { name, id, image, price, category } = CartItem;
+    const { name, id, image, price, category, amount } = CartItem;
     console.log('Product ');
     return (
         <Card
@@ -50,6 +50,9 @@ export const Product: React.FC<ProductProps> = ({ CartItem, buttonHOC, productEv
             >
                 <Text fullWidth={false} lineThrough={false} textAlign="initial" textColor="inherit" textVariant="h3" uppercase={false}>
                     ${price}
+                </Text>
+                <Text fullWidth={false} lineThrough={false} textAlign="initial" textColor="inherit" textVariant="h3" uppercase={false}>
+                    {amount}
                 </Text>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                     {productEventHandlerArray.map(eventObject => buttonHOC(CartItem, eventObject, eventObject.id))}

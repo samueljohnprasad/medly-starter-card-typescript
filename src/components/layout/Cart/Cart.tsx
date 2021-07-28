@@ -8,13 +8,14 @@ import { CartItemType } from '../Products.tsx/type';
 
 export const Cart: React.FC = () => {
     const [drawerState, setDrawerState] = useState(false);
-    const { cartItems, removeProduct, dispatch, clearProducts } = useCart();
+    const { cartItems, removeProduct, dispatch, clearProducts, updateQuantity } = useCart();
     console.log('Cart');
     const handler = () => {
         setDrawerState(!drawerState);
     };
 
-    const addHandler = () => {
+    const addHandler = (cartItem: CartItemType) => {
+        dispatch(updateQuantity(cartItem));
         console.log('im in cart1');
     };
     const removeHandler = (cartItem: CartItemType) => {
@@ -41,7 +42,7 @@ export const Cart: React.FC = () => {
                             buttonHOC={buttonHOC}
                             productEventHandlerArray={[
                                 { eventHandler: addHandler, buttonName: '+', id: 0 },
-                                { eventHandler: removeHandler, buttonName: '-', id: 1 }
+                                { eventHandler: removeHandler, buttonName: 'X', id: 1 }
                             ]}
                         />
                     ))}

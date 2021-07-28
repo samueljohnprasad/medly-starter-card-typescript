@@ -12,13 +12,13 @@ export const reducers = (state: InitialType = initialState, action: CartActionTy
                 const isItemInCart = state.cartItems.find(item => item.id === action.cartItem.id);
 
                 if (isItemInCart) {
-                    newState = state.cartItems.map(item => (item.id === action.cartItem.id ? { ...item } : item));
+                    newState = state.cartItems.map(item => (item.id === action.cartItem.id ? { ...item, amount: item.amount + 1 } : item));
                 } else {
                     newState = [...state.cartItems, action.cartItem];
                 }
                 // newState = [...state.cartItems, action.cartItem];
             } else {
-                newState = [action.cartItem];
+                newState = [{ ...action.cartItem }];
             }
 
             return {
