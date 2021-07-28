@@ -21,13 +21,18 @@ export const Cart: React.FC = () => {
         dispatch(removeProduct(cartItem.id));
         console.log('im in cart2');
     };
+    const cartTotalPrice = () => {
+        console.log('cartTotalPrice');
+
+        return cartItems?.cartItems?.reduce((acc, curr) => acc + curr.price, 0);
+    };
     return (
         <>
             <Button disabled={false} edges="square" size="M" type="button" variant="solid" onClick={handler}>
                 <AddShoppingCartIcon size="S" />
             </Button>
             <Drawer open={drawerState} onClose={handler}>
-                <Drawer.Header>Cart</Drawer.Header>
+                <Drawer.Header>Cart Total Price {cartTotalPrice()} </Drawer.Header>
                 <Drawer.Content>
                     {cartItems?.cartItems?.map(item => (
                         <Product
