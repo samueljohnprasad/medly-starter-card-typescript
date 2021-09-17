@@ -11,3 +11,6 @@ export interface ProductProps {
     buttonHOC: (CartItem: CartItemType, productEventHandler: productEventHandler, key: number) => any;
     productEventHandlerArray: productEventHandler[];
 }
+export type hey = {
+    name: string;
+};
