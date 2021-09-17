@@ -12,5 +12,5 @@ export interface ProductProps {
     productEventHandlerArray: productEventHandler[];
 }
 export type hey = {
-    name: number;
+    name: string;
 };
